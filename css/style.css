@@ -1,0 +1,695 @@
+/* ============================================
+   Kiefer Clayworks
+   style.css
+============================================ */
+
+:root{
+    --cream:#F7F4EF;
+    --burgundy:#7A2536;
+    --clay:#B98C67;
+    --charcoal:#343434;
+    --white:#ffffff;
+
+    --max-width:1200px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Source Sans 3',sans-serif;
+    color:var(--charcoal);
+    background:var(--cream);
+    line-height:1.8;
+
+}
+
+img{
+
+    width:100%;
+    display:block;
+
+}
+
+.container{
+
+    width:min(92%,var(--max-width));
+    margin:auto;
+
+}
+
+
+/************************************************
+HEADER
+************************************************/
+
+header{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    z-index:999;
+
+    background:rgba(247,244,239,.95);
+
+    backdrop-filter:blur(10px);
+
+    border-bottom:1px solid rgba(0,0,0,.08);
+
+}
+
+header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:22px 0;
+
+}
+
+.brand h1{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:3.5rem;
+    letter-spacing:1px;
+    color:var(--burgundy);
+    margin:0;
+    line-height:1;
+
+}
+
+nav{
+
+    display:flex;
+    gap:32px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+
+}
+
+nav a{
+
+    color:var(--charcoal);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    font-size:0.95rem;
+
+    letter-spacing:0.02em;
+
+    transition:.25s;
+
+}
+
+nav a:hover{
+
+    color:var(--burgundy);
+
+}
+
+
+/************************************************
+HERO
+************************************************/
+
+.hero{
+
+    height:100vh;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.hero img{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.28);
+
+}
+
+.hero-text{
+
+    position:absolute;
+
+    z-index:2;
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:80px 20px 20px;
+
+}
+
+.hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:5.2rem;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    line-height:1.05;
+
+    max-width:760px;
+
+}
+
+.hero h2,
+.hero-label{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1rem;
+
+    font-weight:400;
+
+    letter-spacing:0.35em;
+
+    text-transform:uppercase;
+
+    opacity:0.9;
+
+    margin-top:0;
+
+}
+
+.hero h2{
+
+    margin-top:28px;
+
+}
+
+.hero p{
+
+    margin-top:18px;
+
+    font-size:1.1rem;
+
+    max-width:620px;
+
+    line-height:1.75;
+
+    letter-spacing:0.02em;
+
+}
+
+.button{
+
+    display:inline-block;
+
+    margin-top:32px;
+
+    background:transparent;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,0.8);
+
+    text-decoration:none;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    transition:.3s;
+
+}
+
+.button:hover{
+
+    background:rgba(255,255,255,0.12);
+
+    transform:translateY(-2px);
+
+}
+
+.button{
+
+    display:inline-block;
+
+    margin-top:42px;
+
+    background:var(--burgundy);
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:16px 36px;
+
+    border-radius:50px;
+
+    transition:.3s;
+
+}
+
+.button:hover{
+
+    transform:translateY(-3px);
+
+    background:#611e2b;
+
+}
+
+
+/************************************************
+SECTIONS
+************************************************/
+
+section{
+
+    padding:110px 0;
+
+}
+
+section h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:3rem;
+
+    color:var(--burgundy);
+
+    margin-bottom:28px;
+
+}
+
+.eyebrow{
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    color:var(--clay);
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+}
+
+
+/************************************************
+ABOUT
+************************************************/
+
+.two-column{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.two-column img{
+
+    border-radius:16px;
+
+    box-shadow:0 25px 50px rgba(0,0,0,.18);
+
+}
+
+
+/************************************************
+GALLERY
+************************************************/
+
+#gallery{
+
+    background:white;
+
+}
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:20px;
+
+    margin-top:45px;
+
+}
+
+.gallery img{
+
+    border-radius:14px;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    box-shadow:0 14px 30px rgba(0,0,0,.12);
+
+}
+
+.gallery img:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+/************************************************
+CARE
+************************************************/
+
+#care{
+
+    background:#f1ebe4;
+
+}
+
+
+/************************************************
+CONTACT
+************************************************/
+
+#contact{
+
+    text-align:center;
+
+}
+
+#contact h3{
+
+    margin-top:20px;
+
+    font-size:1.6rem;
+
+}
+
+#contact a{
+
+    color:var(--burgundy);
+
+    text-decoration:none;
+
+}
+
+
+/************************************************
+FOOTER
+************************************************/
+
+footer{
+
+    background:var(--burgundy);
+
+    color:white;
+
+    text-align:center;
+
+    padding:36px;
+
+}
+
+
+/************************************************
+RESPONSIVE
+************************************************/
+
+@media(max-width:900px){
+
+header .container{
+
+    flex-direction:column;
+
+}
+
+nav{
+
+    margin-top:20px;
+
+    gap:20px;
+
+}
+
+.hero h1{
+
+    font-size:3rem;
+
+}
+
+.hero h2{
+
+    font-size:1.5rem;
+
+}
+
+.two-column{
+
+    grid-template-columns:1fr;
+
+}
+
+section{
+
+    padding:80px 0;
+
+}
+
+}
+/* ============================================
+   Lightbox
+============================================ */
+
+#lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.9);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+    z-index:5000;
+
+}
+
+#lightbox.active{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+#lightbox img{
+
+    max-width:90%;
+
+    max-height:90%;
+
+    border-radius:12px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
+
+}
+/* ============================================
+   VERSION 2 HEADER
+============================================ */
+
+.site-header{
+
+    background:white;
+
+    border-bottom:1px solid #e8e3dc;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+.site-header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:30px 0;
+
+}
+
+.brand h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2.6rem;
+
+    color:#7A2536;
+
+    letter-spacing:5px;
+
+    line-height:.9;
+
+}
+
+.brand span{
+
+    display:block;
+
+    letter-spacing:8px;
+
+    color:#B98C67;
+
+    margin-top:8px;
+
+    font-size:.95rem;
+
+}
+
+.site-header nav{
+
+    display:flex;
+
+    gap:45px;
+
+}
+
+.site-header nav a{
+
+    color:#444;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.site-header nav a:hover{
+
+    color:#7A2536;
+
+}
+
+
+
+/* ============================================
+   HERO
+============================================ */
+
+.hero-image{
+
+    margin-top:0;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    height:75vh;
+
+    object-fit:cover;
+
+}
+
+
+
+/* ============================================
+   INTRO
+============================================ */
+
+.intro{
+
+    background:white;
+
+    text-align:center;
+
+    padding:80px 0;
+
+}
+
+.intro h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:3.2rem;
+
+    color:#7A2536;
+
+    margin-bottom:20px;
+
+}
+
+.intro p{
+
+    font-size:1.3rem;
+
+    color:#666;
+
+}
